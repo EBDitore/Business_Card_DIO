@@ -1,5 +1,6 @@
 package meu.teste.businesscard.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 // import meu.teste.businesscard.R
@@ -14,5 +15,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater) // Adicionei por ter tirado a de cima
         setContentView(binding.root)
+        insertListener()
+    }
+
+    private fun insertListener(){
+        binding.fab.setOnClickListener {
+            val intent = Intent(this@MainActivity, AddBusinessCardActivity::class.java)
+            startActivity(intent )
+        }
     }
 }
